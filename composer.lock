@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "63bdb5de6ef70e9e2cd55e1fc568b077",
+    "packages": [
+        {
+            "name": "sdon2/ripcord",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sdon2/ripcord.git",
+                "reference": "a2fac53dfaa2a1593911a62d8658e963058509b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sdon2/ripcord/zipball/a2fac53dfaa2a1593911a62d8658e963058509b7",
+                "reference": "a2fac53dfaa2a1593911a62d8658e963058509b7",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ripcord\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saravanakumar Arumugam",
+                    "email": "saravanakumar.a.o@gmail.com",
+                    "homepage": "https://github.com/sdon2"
+                }
+            ],
+            "description": "Simple XML-RPC API",
+            "keywords": [
+                "php",
+                "xmlrpc",
+                "xmlrpc-client"
+            ],
+            "support": {
+                "issues": "https://github.com/sdon2/ripcord/issues",
+                "source": "https://github.com/sdon2/ripcord/tree/master"
+            },
+            "time": "2021-11-20T04:25:09+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "sdon2/ripcord": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

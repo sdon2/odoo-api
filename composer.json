@@ -1,0 +1,22 @@
+{
+    "name": "sdon2/odoo-api",
+    "version": "0.1",
+    "description": "Odoo XML-RPC Client using Ripcord",
+    "keywords": ["php", "odoo", "odoo-xmlrpc", "odoo-xmlrpc-client"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Saravanakumar Arumugam",
+            "email": "saravanakumar.a.o@gmail.com",
+            "homepage": "https://github.com/sdon2"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "OdooAPI\\": "src/"
+        }
+    },
+    "require": {
+        "sdon2/ripcord": "dev-master"
+    }
+}
