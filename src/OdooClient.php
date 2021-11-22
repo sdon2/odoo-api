@@ -129,7 +129,7 @@ class OdooClient
     /**
      * Updates a model/models with given data
      * @param string $model_name Model's Name
-     * @param mixed $id Single Id or Array of ID's to perform update
+     * @param mixed $id Single Integer Id or Array of Integer ID's to perform update
      * @param array $data Data to update
      * @return mixed
      * @throws OdooException
@@ -137,7 +137,7 @@ class OdooClient
     public function updateModel($model_name, $id, array $data)
     {
         if (!is_array($id)) {
-            $id = [$id];
+            $id = [(int)$id];
         }
 
         return $this->execute($model_name, OdooOperations::WRITE, [$id, $data]);
@@ -146,14 +146,14 @@ class OdooClient
     /**
      * Deletes a model/models with given data
      * @param string $model_name Model's Name
-     * @param mixed $id Single Id or Array of ID's to perform delete
+     * @param mixed $id Single Integer Id or Array of Integer ID's to perform delete
      * @return mixed
      * @throws OdooException
      */
     public function deleteModel($model_name, $id)
     {
         if (!is_array($id)) {
-            $id = [$id];
+            $id = [(int)$id];
         }
 
         return $this->execute($model_name, OdooOperations::UNLINK, [$id]);
@@ -162,7 +162,7 @@ class OdooClient
     /**
      * Searches for a model/models with id with fields mentioned
      * @param string $model_name Model's Name
-     * @param mixed $id Single Id or Array of ID's to perform delete
+     * @param mixed $id Single Integer Id or Array of Integer ID's to perform search
      * @param array $fields Fields to return. If empty, all of the fields will be returned
      * @return mixed If $id is array, array of models will be returned, otherwise a single model will be returned
      * @throws OdooException
@@ -172,7 +172,7 @@ class OdooClient
         $return_single = false;
 
         if (!is_array($id)) {
-            $id = [$id];
+            $id = [(int)$id];
             $return_single = true;
         }
 

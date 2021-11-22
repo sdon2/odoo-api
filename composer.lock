@@ -4,23 +4,22 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63bdb5de6ef70e9e2cd55e1fc568b077",
+    "content-hash": "48ca2549f4c515a629fe5756f4733ab7",
     "packages": [
         {
             "name": "sdon2/ripcord",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sdon2/ripcord.git",
-                "reference": "a2fac53dfaa2a1593911a62d8658e963058509b7"
+                "reference": "0e71148e258d4d0298c0a7a45795c54527e18f1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sdon2/ripcord/zipball/a2fac53dfaa2a1593911a62d8658e963058509b7",
-                "reference": "a2fac53dfaa2a1593911a62d8658e963058509b7",
+                "url": "https://api.github.com/repos/sdon2/ripcord/zipball/0e71148e258d4d0298c0a7a45795c54527e18f1b",
+                "reference": "0e71148e258d4d0298c0a7a45795c54527e18f1b",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -46,17 +45,15 @@
             ],
             "support": {
                 "issues": "https://github.com/sdon2/ripcord/issues",
-                "source": "https://github.com/sdon2/ripcord/tree/master"
+                "source": "https://github.com/sdon2/ripcord/tree/v1.0.0"
             },
-            "time": "2021-11-20T04:25:09+00:00"
+            "time": "2021-11-22T04:13:47+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "sdon2/ripcord": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
