@@ -2,7 +2,9 @@
 
 namespace OdooAPI;
 
-use Exception;
+use OdooAPI\Exceptions\OdooAuthException;
+use OdooAPI\Exceptions\OdooException;
+use OdooAPI\Exceptions\OdooModelNotFoundException;
 use Ripcord\Ripcord;
 
 class OdooClient
@@ -52,22 +54,27 @@ class OdooClient
     /**
      * Gets UID to perform operations on models
      * @return int
+     * @throws OdooAuthException
      */
     protected function getUid()
     {
-        return $this->getCommon()->authenticate($this->db, $this->username, $this->password, []);
+        $uid = $this->getCommon()->authenticate($this->db, $this->username, $this->password, []);
+        if (!is_numeric($uid)) {
+            throw new OdooAuthException('Authentication failure. Please check Odoo Credentials');
+        }
+        return $uid;
     }
 
     /**
      * Processes result and throws exception if error happens
      * @param mixed $result
      * @return mixed
-     * @throws Exception
+     * @throws OdooException
      */
     protected function processResult($result)
     {
         if (is_array($result) && array_key_exists('faultCode', $result)) {
-            throw new Exception($result['faultString']);
+            throw new OdooException($result['faultString']);
         }
         return $result;
     }
@@ -79,7 +86,7 @@ class OdooClient
      * @param array $options Options based on Operation
      * @param array $extra_options Extra options based on Operation
      * @return mixed
-     * @throws OdooException
+     * @throws OdooModelNotFoundException|OdooException
      */
     protected function execute($model_name, $operation, array $options, array $extra_options = [])
     {
@@ -87,7 +94,11 @@ class OdooClient
             $result = $this->getObject()->execute_kw($this->db, $this->getUid(), $this->password, $model_name, $operation, $options, $extra_options);
             return $this->processResult($result);
         } catch (\Exception $ex) {
-            throw new OdooException($ex->getMessage(), $ex->getCode());
+            if (strpos($ex->getMessage(), 'Record not found')) {
+                throw new OdooModelNotFoundException('Model not found (or) deleted');
+            } else {
+                throw new OdooException($ex->getMessage(), $ex->getCode());
+            }
         }
     }
 

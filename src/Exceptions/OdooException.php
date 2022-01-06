@@ -1,6 +1,6 @@
 <?php
 
-namespace OdooAPI;
+namespace OdooAPI\Exceptions;
 
 class OdooException extends \Exception
 {
