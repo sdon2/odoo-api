@@ -94,7 +94,7 @@ class OdooClient
             $result = $this->getObject()->execute_kw($this->db, $this->getUid(), $this->password, $model_name, $operation, $options, $extra_options);
             return $this->processResult($result);
         } catch (\Exception $ex) {
-            if (strpos($ex->getMessage(), 'Record not found')) {
+            if (strpos($ex->getMessage(), 'Record does not exist') !== false) {
                 throw new OdooModelNotFoundException('Model not found (or) deleted');
             } else {
                 throw new OdooException($ex->getMessage(), $ex->getCode());
