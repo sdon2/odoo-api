@@ -1,6 +1,5 @@
 {
     "name": "sdon2/odoo-api",
-    "version": "1.0.0",
     "description": "Odoo XML-RPC Client using Ripcord",
     "keywords": ["php", "odoo", "odoo-xmlrpc", "odoo-xmlrpc-client"],
     "license": "MIT",
