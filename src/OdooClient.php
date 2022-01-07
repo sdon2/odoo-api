@@ -88,7 +88,7 @@ class OdooClient
      * @return mixed
      * @throws OdooModelNotFoundException|OdooException
      */
-    protected function execute($model_name, $operation, array $options, array $extra_options = [])
+    public function execute($model_name, $operation, array $options, array $extra_options = [])
     {
         try {
             $result = $this->getObject()->execute_kw($this->db, $this->getUid(), $this->password, $model_name, $operation, $options, $extra_options);
